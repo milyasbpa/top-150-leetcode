@@ -1,0 +1,33 @@
+{
+  "small": {
+    "size": 10,
+    "minOpsPerSec": 1000000,
+    "maxTimeMs": 0.01,
+    "maxMemoryMB": 20,
+    "complexity": "O(m+n)",
+    "description": "Small arrays (5+5 elements) - very fast with measurement overhead tolerance"
+  },
+  "medium": {
+    "size": 1000,
+    "minOpsPerSec": 25000,
+    "maxTimeMs": 0.1,
+    "maxMemoryMB": 15,
+    "complexity": "O(m+n)",
+    "description": "Medium arrays (500+500 elements) - good performance with delta memory tracking"
+  },
+  "large": {
+    "size": 10000,
+    "minOpsPerSec": 2000,
+    "maxTimeMs": 1,
+    "maxMemoryMB": 180,
+    "complexity": "O(m+n)",
+    "description": "Large arrays (5000+5000 elements) - focus on algorithmic efficiency with realistic Node.js overhead"
+  },
+  "config": {
+    "measurement": "memory_delta_hybrid",
+    "approach": "realistic_thresholds_v2",
+    "baseline": "measurement_overhead_adjusted",
+    "rationale": "Thresholds based on actual performance characteristics including V8 engine overhead",
+    "last_updated": "2025-10-17T10:30:00Z"
+  }
+}

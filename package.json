@@ -1,0 +1,40 @@
+{
+  "name": "top-150-leetcode",
+  "version": "1.0.0",
+  "description": "TypeScript playground for practicing top 150 LeetCode problems",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "clean": "rm -rf dist",
+    "list": "ts-node src/index.ts list",
+    "dev": "ts-node src/index.ts",
+    "dev:1": "nodemon --watch 'src/problems/**/1-*/dev.ts' --watch 'src/problems/**/1-*.ts' --ext ts --exec 'ts-node src/index.ts 1'",
+    "test": "jest",
+    "test:1": "jest --testPathPatterns=1-merge_sorted_array",
+    "test:watch": "jest --watch",
+    "perf:1": "ts-node src/problems/array/1-merge_sorted_array/dev.performance.ts",
+    "validate:1": "npm run test:1 && npm run perf:1"
+  },
+  "keywords": [
+    "typescript",
+    "leetcode",
+    "algorithms",
+    "data-structures"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/benchmark": "^2.1.5",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^20.8.0",
+    "benchmark": "^2.1.4",
+    "cli-table3": "^0.6.5",
+    "jest": "^30.2.0",
+    "nodemon": "^3.0.1",
+    "ts-jest": "^29.4.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}
