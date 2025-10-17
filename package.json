@@ -13,17 +13,21 @@
     "dev:1": "nodemon --watch 'src/problems/**/1-*/dev.ts' --watch 'src/problems/**/1-*.ts' --ext ts --exec 'ts-node src/index.ts 1'",
     "dev:2": "nodemon --watch 'src/problems/**/2-*/dev.ts' --watch 'src/problems/**/2-*.ts' --ext ts --exec 'ts-node src/index.ts 2'",
     "dev:3": "nodemon --watch 'src/problems/**/3-*/dev.ts' --watch 'src/problems/**/3-*.ts' --ext ts --exec 'ts-node src/index.ts 3'",
+    "dev:4": "nodemon --watch 'src/problems/**/4-*/dev.ts' --watch 'src/problems/**/4-*.ts' --ext ts --exec 'ts-node src/index.ts 4'",
     "test": "jest",
     "test:1": "jest --testPathPatterns=1-merge_sorted_array",
     "test:2": "jest --testPathPatterns=2-remove_element",
     "test:3": "jest --testPathPatterns=3-remove_duplicates_from_sorted_array",
+    "test:4": "jest --testPathPatterns=4-remove_duplicates_from_sorted_array_II",
     "test:watch": "jest --watch",
     "perf:1": "ts-node src/problems/array/1-merge_sorted_array/dev.performance.ts",
     "perf:2": "ts-node src/problems/array/2-remove_element/dev.performance.ts",
     "perf:3": "ts-node src/problems/array/3-remove_duplicates_from_sorted_array/dev.performance.ts",
+    "perf:4": "ts-node src/problems/array/4-remove_duplicates_from_sorted_array_II/dev.performance.ts",
     "validate:1": "npm run test:1 && npm run perf:1",
     "validate:2": "npm run test:2 && npm run perf:2",
-    "validate:3": "npm run test:3 && npm run perf:3"
+    "validate:3": "npm run test:3 && npm run perf:3",
+    "validate:4": "npm run test:4 && npm run perf:4"
   },
   "keywords": [
     "typescript",
