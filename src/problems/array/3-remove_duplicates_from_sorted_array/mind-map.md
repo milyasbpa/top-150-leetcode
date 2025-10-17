@@ -2,9 +2,9 @@
 
 ## 🧠 Problem Solving Mind Map
 
-```mermaid
+````mermaid
 mindmap
-  root((Remove Duplicates<br/>from Sorted Array<br/>LeetCode #26))
+  root((Remove Duplicates from Sorted Array))
     Problem Understanding
       Input
         Sorted Array
@@ -15,8 +15,8 @@ mindmap
         Modified array in-place
         First k elements are unique
       Examples
-        [1,1,2] → k=2, [1,2,_]
-        [0,0,1,1,1,2,2] → k=3, [0,1,2,_,_,_,_]
+        Example 1: nums equals 1,1,2 returns k equals 2
+        Example 2: nums equals 0,0,1,1,1,2,2 returns k equals 3
 
     Key Insights
       Sorted Property
@@ -28,29 +28,29 @@ mindmap
         Cannot use extra arrays
         Modify original array
       Two Pointer Strategy
-        Slow pointer (k): unique position
-        Fast pointer (i): current check
+        Slow pointer k for unique position
+        Fast pointer i for current check
         Start both from index 1
 
     Algorithm Design
       Setup
-        Handle edge case: empty array
-        k = 1 (first element always unique)
-        Loop from i = 1
+        Handle edge case empty array
+        k equals 1 first element always unique
+        Loop from i equals 1
       Main Logic
         Compare nums[i] with nums[i-1]
-        If different: nums[k] = nums[i], k++
-        If same: skip (duplicate)
+        If different copy to position k and increment k
+        If same skip duplicate
       Return
-        k = count of unique elements
+        k equals count of unique elements
 
     Complexity Analysis
       Time Complexity
-        O(n): single pass
+        O(n) single pass
         Each element visited once
         Constant work per element
       Space Complexity
-        O(1): in-place modification
+        O(1) in-place modification
         Only use k and i variables
         No additional data structures
 
@@ -71,45 +71,43 @@ mindmap
     Alternative Approaches
       Hash Set Method
         Track seen elements
-        O(n) space, O(n) time
+        O(n) space O(n) time
         Not optimal for sorted input
       Filter Method
         Create new array
         O(n) space overhead
         Not in-place
-      Naive O(n²)
+      Naive O(n squared)
         Compare each with all previous
-        Inefficient, doesn't use sorted property
+        Inefficient unused sorted property
 
     Related Problems
-      Remove Element (#27)
+      Remove Element 27
         Remove specific value
         Similar two-pointer technique
         Different comparison logic
-      Remove Duplicates II (#80)
+      Remove Duplicates II 80
         Allow at most 2 duplicates
         Extension of this problem
-      Move Zeroes (#283)
+      Move Zeroes 283
         Move elements to end
         Similar in-place modification
-```
-
-## 🎯 Algorithm Flow Diagram
+```## 🎯 Algorithm Flow Diagram
 
 ```mermaid
 flowchart TD
     Start([Start: Remove Duplicates]) --> Check{Array empty?}
     Check -->|Yes| ReturnZero[Return 0]
-    Check -->|No| Setup[k = 1, i = 1<br/>First element always unique]
+    Check -->|No| Setup["k = 1, i = 1<br/>First element always unique"]
 
-    Setup --> Loop{i < nums.length?}
+    Setup --> Loop{"i < nums.length?"}
     Loop -->|No| Return[Return k]
-    Loop -->|Yes| Compare{nums[i] ≠ nums[i-1]?}
+    Loop -->|Yes| Compare{"nums at i != nums at i-1?"}
 
-    Compare -->|Yes| Unique[nums[k] = nums[i]<br/>k++]
+    Compare -->|Yes| Unique["nums at k = nums at i<br/>k++"]
     Compare -->|No| Skip[Skip duplicate]
 
-    Unique --> Next[i++]
+    Unique --> Next["i++"]
     Skip --> Next
     Next --> Loop
 
@@ -121,22 +119,26 @@ flowchart TD
     style Unique fill:#e8f5e8
     style Skip fill:#fff3e0
     style Compare fill:#fce4ec
-```
+````
 
 ## 🔄 Two Pointer Movement Pattern
 
 ```mermaid
-gitgraph
-    commit id: "Initial: [1,1,2,2,3]"
-    commit id: "k=1, i=1: Check 1 vs 1"
-    commit id: "Same → Skip, i=2"
-    commit id: "k=1, i=2: Check 2 vs 1"
-    commit id: "Different → Keep, k=2"
-    commit id: "k=2, i=3: Check 2 vs 2"
-    commit id: "Same → Skip, i=4"
-    commit id: "k=2, i=4: Check 3 vs 2"
-    commit id: "Different → Keep, k=3"
-    commit id: "Final: [1,2,3,_,_]"
+graph TD
+    A["Initial: [1,1,2,2,3]<br/>k=1, i=1"] --> B["Check nums[1]=1 vs nums[0]=1"]
+    B --> C["Same - Skip<br/>k=1, i=2"]
+    C --> D["Check nums[2]=2 vs nums[1]=1"]
+    D --> E["Different - Keep<br/>nums[1]=2, k=2, i=3"]
+    E --> F["Check nums[3]=2 vs nums[2]=2"]
+    F --> G["Same - Skip<br/>k=2, i=4"]
+    G --> H["Check nums[4]=3 vs nums[3]=2"]
+    H --> I["Different - Keep<br/>nums[2]=3, k=3"]
+    I --> J["Final: [1,2,3,_,_]<br/>Return k=3"]
+
+    style A fill:#e3f2fd
+    style E fill:#e8f5e8
+    style I fill:#e8f5e8
+    style J fill:#f3e5f5
 ```
 
 ## 📊 Complexity Comparison
@@ -147,36 +149,28 @@ xychart-beta
     x-axis [10, 100, 1000, 10000]
     y-axis "Operations" 0 --> 100000000
     line "Our O(n) Solution" [10, 100, 1000, 10000]
-    line "Naive O(n²) Solution" [100, 10000, 1000000, 100000000]
+    line "Naive O(n squared) Solution" [100, 10000, 1000000, 100000000]
     line "Hash Set O(n) Solution" [10, 100, 1000, 10000]
 ```
 
 ## 🎨 Visual Memory Layout
 
 ```mermaid
-block-beta
-    columns 8
-
-    block:initial["Initial Array"]:8
-        A1["1"] A2["1"] A3["2"] A4["2"] A5["3"] A6[" "] A7[" "] A8[" "]
+graph TB
+    subgraph "Initial Array"
+        A1[1] --- A2[1] --- A3[2] --- A4[2] --- A5[3]
     end
 
-    space:8
-
-    block:pointers["Pointer Positions"]:8
-        P1["k=1"] P2["i=1"] P3[" "] P4[" "] P5[" "] P6[" "] P7[" "] P8[" "]
+    subgraph "Pointer Positions"
+        P1[k=1] --- P2[i=1]
     end
 
-    space:8
-
-    block:after["After Processing"]:8
-        B1["1"] B2["2"] B3["3"] B4["_"] B5["_"] B6[" "] B7[" "] B8[" "]
+    subgraph "After Processing"
+        B1[1] --- B2[2] --- B3[3] --- B4[_] --- B5[_]
     end
 
-    space:8
-
-    block:result["Result k=3"]:8
-        R1["✓"] R2["✓"] R3["✓"] R4["✗"] R5["✗"] R6[" "] R7[" "] R8[" "]
+    subgraph "Result k=3"
+        R1[Valid] --- R2[Valid] --- R3[Valid] --- R4[Invalid] --- R5[Invalid]
     end
 ```
 
@@ -184,17 +178,17 @@ block-beta
 
 ```mermaid
 graph LR
-    A[Remove Duplicates<br/>from Sorted Array<br/>#26] --> B[Remove Duplicates<br/>from Sorted Array II<br/>#80]
-    A --> C[Remove Element<br/>#27]
-    A --> D[Move Zeroes<br/>#283]
+    A["Remove Duplicates from Sorted Array 26"] --> B["Remove Duplicates from Sorted Array II 80"]
+    A --> C["Remove Element 27"]
+    A --> D["Move Zeroes 283"]
 
-    B --> E[Remove Duplicates<br/>from Unsorted Array<br/>Custom]
-    C --> F[Remove All Adjacent<br/>Duplicates<br/>#1047]
-    D --> G[Sort Array by Parity<br/>#905]
+    B --> E["Remove Duplicates from Unsorted Array Custom"]
+    C --> F["Remove All Adjacent Duplicates 1047"]
+    D --> G["Sort Array by Parity 905"]
 
-    A --> H[Two Pointer<br/>Technique]
-    H --> I[Container with<br/>Most Water<br/>#11]
-    H --> J[3Sum<br/>#15]
+    A --> H["Two Pointer Technique"]
+    H --> I["Container with Most Water 11"]
+    H --> J["3Sum 15"]
 
     style A fill:#ff6b6b
     style H fill:#4ecdc4
@@ -228,7 +222,7 @@ quadrantChart
 
     Our Solution: [0.1, 0.1]
     Hash Set Approach: [0.1, 0.7]
-    Naive O(n²): [0.9, 0.1]
+    Naive O(n squared): [0.9, 0.1]
     Filter Method: [0.2, 0.8]
 ```
 
