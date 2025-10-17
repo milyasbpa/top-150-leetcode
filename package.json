@@ -18,6 +18,7 @@
     "dev:6": "nodemon --watch 'src/problems/**/6-*/dev.ts' --watch 'src/problems/**/6-*.ts' --ext ts --exec 'ts-node src/index.ts 6'",
     "dev:7": "nodemon --watch 'src/problems/**/7-*/dev.ts' --watch 'src/problems/**/7-*.ts' --ext ts --exec 'ts-node src/index.ts 7'",
     "dev:8": "nodemon --watch 'src/problems/**/8-*/dev.ts' --watch 'src/problems/**/8-*.ts' --ext ts --exec 'ts-node src/index.ts 8'",
+    "dev:9": "nodemon --watch 'src/problems/**/9-*/dev.ts' --watch 'src/problems/**/9-*.ts' --ext ts --exec 'ts-node src/index.ts 9'",
     "test": "jest",
     "test:1": "jest --testPathPatterns=1-merge_sorted_array",
     "test:2": "jest --testPathPatterns=2-remove_element",
@@ -27,6 +28,7 @@
     "test:6": "jest --testPathPatterns=6-rotate_array",
     "test:7": "jest --testPathPatterns=7-best_time_to_buy_and_sell_stock",
     "test:8": "jest --testPathPatterns=8-best_time_to_buy_and_sell_stock_II",
+    "test:9": "jest --testPathPatterns=9-jump_game",
     "test:watch": "jest --watch",
     "perf:1": "ts-node src/problems/array/1-merge_sorted_array/dev.performance.ts",
     "perf:2": "ts-node src/problems/array/2-remove_element/dev.performance.ts",
@@ -36,6 +38,7 @@
     "perf:6": "ts-node src/problems/array/6-rotate_array/dev.performance.ts",
     "perf:7": "ts-node src/problems/array/7-best_time_to_buy_and_sell_stock/dev.performance.ts",
     "perf:8": "ts-node src/problems/array/8-best_time_to_buy_and_sell_stock_II/dev.performance.ts",
+    "perf:9": "ts-node -e \"require('./src/problems/array/9-jump_game/dev.ts').runTests()\"",
     "validate:1": "npm run test:1 && npm run perf:1",
     "validate:2": "npm run test:2 && npm run perf:2",
     "validate:3": "npm run test:3 && npm run perf:3",
@@ -43,7 +46,8 @@
     "validate:5": "npm run test:5 && npm run perf:5",
     "validate:6": "npm run test:6 && npm run perf:6",
     "validate:7": "npm run test:7 && npm run perf:7",
-    "validate:8": "npm run test:8 && npm run perf:8"
+    "validate:8": "npm run test:8 && npm run perf:8",
+    "validate:9": "npm run test:9 && npm run perf:9"
   },
   "keywords": [
     "typescript",
