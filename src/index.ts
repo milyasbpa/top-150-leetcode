@@ -65,6 +65,9 @@ class ProblemRunner {
     console.log(
       "  npm run dev:9    # Run problem #9 main() function with hot reload"
     );
+    console.log(
+      "  npm run dev:10   # Run problem #10 main() function with hot reload"
+    );
     console.log("  npm run test:1   # Run Jest tests for problem #1");
     console.log("  npm run test:2   # Run Jest tests for problem #2");
     console.log("  npm run test:3   # Run Jest tests for problem #3");
@@ -74,6 +77,7 @@ class ProblemRunner {
     console.log("  npm run test:7   # Run Jest tests for problem #7");
     console.log("  npm run test:8   # Run Jest tests for problem #8");
     console.log("  npm run test:9   # Run Jest tests for problem #9");
+    console.log("  npm run test:10  # Run Jest tests for problem #10");
     console.log("  npm run list     # List all problems");
     console.log("  npm run dev      # Show this help\n");
 
