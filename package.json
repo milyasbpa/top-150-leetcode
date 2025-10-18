@@ -20,6 +20,8 @@
     "dev:8": "nodemon --watch 'src/problems/**/8-*/dev.ts' --watch 'src/problems/**/8-*.ts' --ext ts --exec 'ts-node src/index.ts 8'",
     "dev:9": "nodemon --watch 'src/problems/**/9-*/dev.ts' --watch 'src/problems/**/9-*.ts' --ext ts --exec 'ts-node src/index.ts 9'",
     "dev:10": "nodemon --watch 'src/problems/**/10-*/dev.ts' --watch 'src/problems/**/10-*.ts' --ext ts --exec 'ts-node src/index.ts 10'",
+    "dev:11": "nodemon --watch 'src/problems/**/11-*/dev.ts' --watch 'src/problems/**/11-*.ts' --ext ts --exec 'ts-node src/index.ts 11'",
+    "dev:12": "nodemon --watch 'src/problems/**/12-*/dev.ts' --watch 'src/problems/**/12-*.ts' --ext ts --exec 'ts-node src/index.ts 12'",
     "test": "jest",
     "test:1": "jest --testPathPatterns=1-merge_sorted_array",
     "test:2": "jest --testPathPatterns=2-remove_element",
@@ -31,6 +33,8 @@
     "test:8": "jest --testPathPatterns=8-best_time_to_buy_and_sell_stock_II",
     "test:9": "jest --testPathPatterns=9-jump_game",
     "test:10": "jest --testPathPatterns=10-jump_game_II",
+    "test:11": "jest --testPathPatterns=11-h_index",
+    "test:12": "jest --testPathPatterns=12-insert_delete_getrandom_o1",
     "test:watch": "jest --watch",
     "perf:1": "ts-node src/problems/array/1-merge_sorted_array/dev.performance.ts",
     "perf:2": "ts-node src/problems/array/2-remove_element/dev.performance.ts",
@@ -42,6 +46,8 @@
     "perf:8": "ts-node src/problems/array/8-best_time_to_buy_and_sell_stock_II/dev.performance.ts",
     "perf:9": "ts-node -e \"require('./src/problems/array/9-jump_game/dev.ts').runTests()\"",
     "perf:10": "ts-node src/problems/array/10-jump_game_II/dev.ts",
+    "perf:11": "ts-node src/problems/array/11-h_index/dev.ts",
+    "perf:12": "ts-node -e \"require('./src/problems/array/12-insert_delete_getrandom_o1/dev.ts').compareImplementations()\"",
     "validate:1": "npm run test:1 && npm run perf:1",
     "validate:2": "npm run test:2 && npm run perf:2",
     "validate:3": "npm run test:3 && npm run perf:3",
@@ -51,7 +57,9 @@
     "validate:7": "npm run test:7 && npm run perf:7",
     "validate:8": "npm run test:8 && npm run perf:8",
     "validate:9": "npm run test:9 && npm run perf:9",
-    "validate:10": "npm run test:10 && npm run perf:10"
+    "validate:10": "npm run test:10 && npm run perf:10",
+    "validate:11": "npm run test:11 && npm run perf:11",
+    "validate:12": "npm run test:12 && npm run perf:12"
   },
   "keywords": [
     "typescript",
